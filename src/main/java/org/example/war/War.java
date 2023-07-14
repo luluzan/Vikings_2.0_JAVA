@@ -28,17 +28,21 @@ public class War extends Vikings {
     public void addViking(Vikings viking) {
         vikingArmy.add(viking);
     }
+
     public void addSaxon(Saxon saxon) {
         saxonArmy.add(saxon);
     }
+
     private Vikings getRandomViking() {
         int randomIndex = new Random().nextInt(vikingArmy.size());
         return vikingArmy.get(randomIndex);
     }
+
     private Saxon getRandomSaxon() {
         int randomIndex = new Random().nextInt(saxonArmy.size());
         return saxonArmy.get(randomIndex);
     }
+
     public String vikingAttack() {
         if (saxonArmy.isEmpty()) {
             System.out.println("No hay sajones en el ejército sajón.");
@@ -55,7 +59,29 @@ public class War extends Vikings {
             saxonArmy.remove(randomSaxon);
             return "A Saxon has died in combat";
         }
-        return "La que está liando el pollito";
+
+        return "La que esta liando el pollitoVikingo";
     }
+
+    public String saxonAttack() {
+        if (vikingArmy.isEmpty()) {
+            System.out.println("No hay vikingos en el ejército vikingo.");
+            return null;
+        }
+
+        Saxon randomSaxon = getRandomSaxon();
+        Vikings randomViking = getRandomViking();
+
+        int saxonStrength = randomSaxon.getStrength();
+        randomViking.receiveDamage(saxonStrength);
+
+        if (randomViking.getHealth() <= 0) {
+            vikingArmy.remove(randomViking);
+            return "A Viking has died in act of combat";
+        }
+
+        return randomViking.getMsg();
+    }
+
 
 }
