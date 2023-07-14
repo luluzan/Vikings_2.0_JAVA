@@ -18,4 +18,17 @@ public class Saxon extends Soldier {
             return "A Saxon has received " + super.health + " points of damage";
         }
     }
+    public int getHealth() {//ppara que nos devielva health en war test
+        return health;
+    }
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    public void receiveDamage(int damage) {
+        health -= damage;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
 }

@@ -69,7 +69,7 @@ class SaxonTest {
     }
 
    @Test
-   public void aaaaaashould_return_A_Saxon_has_died_in_combat_if_the_Saxon_dies() {
+   public void should_return_A_Saxon_has_died_in_combat_if_the_Saxon_dies() {
         Saxon saxon = new Saxon(health, strength);
         saxon.receiveDamage(health);
         assertEquals("A Saxon has died in combat", saxon.getMsg());

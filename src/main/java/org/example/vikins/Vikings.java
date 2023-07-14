@@ -24,5 +24,14 @@ public class Vikings extends Soldier {
     public String battleCry() {
         return "Odin Owns You All!";
     }
+
+    public int getStrength() { //ppara el test de war
+        return strength;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
 }
 
