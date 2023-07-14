@@ -82,6 +82,5 @@ public class War extends Vikings {
 
         return randomViking.getMsg();
     }
-
-
 }
+//finalizado_commit + push
